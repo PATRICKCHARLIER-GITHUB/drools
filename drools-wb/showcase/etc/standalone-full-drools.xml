@@ -43,6 +43,8 @@
         <property name="designerdataobjects" value="${designerdataobjects:false}"/>
         <!-- Make GIT repositories available from outside localhost. -->
         <property name="org.uberfire.nio.git.ssh.host" value="0.0.0.0"/>
+		<property name="kie.maven.settings.custom" value="${user.home}/.m2/settings.xml" />
+		<property name="org.kie.server.location" value="http://192.168.99.100:8180/kie-server/services/rest/server"></property>
     </system-properties>
 
     <management>
