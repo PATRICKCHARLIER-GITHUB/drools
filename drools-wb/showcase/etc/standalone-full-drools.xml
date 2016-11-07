@@ -164,10 +164,39 @@
                         <password>sa</password>
                     </security>
                 </datasource>
+				<datasource jndi-name="java:jboss/datasources/mdrDS" pool-name="mdrDS" enabled="true">
+					 <connection-url>jdbc:oracle:thin:@ath-blade-2.athens.intrasoft-intl.private:1521:maredev</connection-url>
+					  <driver>oracle</driver>
+					  <pool>
+					   <min-pool-size>1</min-pool-size>
+					   <max-pool-size>5</max-pool-size>
+					   <prefill>true</prefill>
+					  </pool>
+					  <security>
+					   <user-name>mdr</user-name>
+					   <password>password</password>
+					  </security>
+				</datasource>
+				<datasource jndi-name="java:jboss/datasources/tld_ctsDS" pool-name="tld_ctsDS" enabled="true">
+					 <connection-url>jdbc:oracle:thin:@ath-blade-2.athens.intrasoft-intl.private:1521:maredev</connection-url>
+					  <driver>oracle</driver>
+					  <pool>
+					   <min-pool-size>1</min-pool-size>
+					   <max-pool-size>5</max-pool-size>
+					   <prefill>true</prefill>
+					  </pool>
+					  <security>
+					   <user-name>tld_cts</user-name>
+					   <password>password</password>
+					  </security>
+				</datasource>				
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
+					<driver name="oracle" module="com.oracle">
+						<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+					</driver>
                 </drivers>
             </datasources>
         </subsystem>
